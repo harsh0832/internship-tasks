@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background: #6c63ff;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 10px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #6c63ff;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .article {
+            margin-bottom: 30px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .article img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .article h2 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .read-more {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        .blog-content img {
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.container');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function loadBlog(title, imageSrc, content) {
+            const blogContainer = document.getElementById('blog');
+            blogContainer.querySelector('h2').innerText = title;
+            blogContainer.querySelector('img').src = imageSrc;
+            blogContainer.querySelector('.blog-content').innerHTML = content;
+            showSection('blog');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Blog</h1>
+    </header>
+    <nav>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('about')">About</a>
+        <a onclick="showSection('Blog')">Blog</a>
+    </nav>
+
+   
+    <div id="home" class="container active">
+        <div class="article">
+            <p><strong>Jan 17, 2025</strong></p>
+            <img src="C:\Users\harsh\OneDrive\Pictures\images.jpeg" alt="Cars">
+            <h2> BMW Automative</h2>
+            <p>The company was founded in 1916 as a manufacturer of aircraft engines, which it produced from 1917 to 1918 and again from 1933 to 1945 creating engines for aircraft that were used in the Second World War.</p>
+            <a class="read-more" onclick="loadBlog('BMW Automative', '123.jpg', `
+                <p>The company's automobiles are marketed under the BMW, Mini and Rolls-Royce brands, and motorcycles are marketed under the BMW Motorrad brand.</p>
+                <p>BMW is headquartered in Munich and produces motor vehicles in Germany, the United Kingdom, the United States, Brazil, Mexico, South Africa, India, China, and previously also in the Netherlands </p>
+                <p>BMW became an automobile manufacturer in 1928 when it purchased Fahrzeugfabrik Eisenach, which, at the time, built the Austin 7 under licence from Dixi. </p>
+            `)">READ MORE</a>
+        </div>
+        <div class="article">
+            <p><strong>Jan 17, 2025</strong></p>
+            <img src="C:\Users\harsh\OneDrive\Pictures\images (1).jpeg" alt="Race Cars">
+            <h2>Ferrari S.p.A.</h2>
+            <p>is an Italian luxury sports car manufacturer based in Maranello. Founded in 1939 by Enzo Ferrari (1898–1988), the company built its first car in 1940, adopted its current name in 1945, and began to produce its current line of road cars in 1947. Ferrari became a public company in 1960, and from 1963 to 2014 it was a subsidiary of Fiat S.p.A.</p>
+            <a class="read-more" onclick="loadBlog('Ferrari S.p.A.', 'Untitled.jpg', `
+                <p>Is an Italian luxury sports car manufacturer based in Maranello. Founded in 1939 by Enzo Ferrari (1898–1988), the company built its first car in 1940, adopted its current name in 1945, and began to produce its current line of road cars in 1947. Ferrari became a public company in 1960, and from 1963 to 2014 it was a subsidiary of Fiat S.p.A.</p>
+                <p>Throughout its history, the company has been noted for its continued participation in racing, especially in Formula One, where its team, Scuderia Ferrari, is the series' single oldest and most successful. Scuderia Ferrari has raced since 1929, first in Grand Prix events and later in Formula One, where it holds many records.</p>
+            `)">READ MORE</a>
+        </div>
+    </div>
+
+   
+    <div id="about" class="container">
+        <h2>About Us</h2>
+        <p>Welcome to our blog! Here, we share insights, stories, and updates on a variety of topics. Our mission is to inspire and inform readers with engaging content.</p>
+    </div>
+
+    
+    <div id="blog" class="container">
+        <h2>Blog</h2>
+        <img src="" alt="">
+        <div class="blog-content"></div>
+    </div>
+</body>
+</html>
